@@ -44,31 +44,32 @@ def clicked():
         decoded.append(chr(decode))
 
     string = ''.join(decoded)
-    open = f'Открытый ключ: {e}, {n}'
-    close = f'Закрытый ключ: {d}, {n}'
+    open = f'Public key: {e}, {n}'
+    close = f'Private key: {d}, {n}'
+
     label.configure(text = string)
     label_open.configure(text = open)
     label_close.configure(text = close)
 
 window = tk.Tk()
-window.title("RSA-шифрование")
+window.title("RSA encryption")
 window.geometry('400x300')
 
 entry = tk.Entry(window)
 entry.focus()
 entry.pack()
 
-label = tk.Label(window, text="Зашифрованное сообщение")
+label = tk.Label(window, text="Encrypted message")
 label.pack()
 
 
-label_open = tk.Label(window, text="Открытый ключ")
+label_open = tk.Label(window, text="Public key")
 label_open.pack()
 
-label_close = tk.Label(window, text="Закрытый ключ")
+label_close = tk.Label(window, text="Private key")
 label_close.pack()
 
-button = tk.Button(window, text="Зашифровать", command=clicked)
+button = tk.Button(window, text="Encrypt", command=clicked)
 button.pack()
 
 window.mainloop()
